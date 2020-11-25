@@ -13,22 +13,13 @@ public class Ex03_AlunosMedia {
 		return alunos;
 	}
 	
-	static double[] registrarNotasProva01(double[] notasProva01, String[] alunos){
+	static double[] registrarNotas(double[] notas, String[] alunos, String titulo){
 		
 		for(int i = 0; i < 5; i++) {
-			notasProva01[i] = Double.parseDouble(JOptionPane.showInputDialog(alunos[i] + " nota na prova 1:"));
+			notas[i] = Double.parseDouble(JOptionPane.showInputDialog(null, alunos[i] + ", nota:", titulo, 1));
 		}
 		
-		return notasProva01;
-	}
-	
-	static double[] registrarNotasProva02(double[] notasProva02, String[] alunos){
-		
-		for(int i = 0; i < 5; i++) {
-			notasProva02[i] = Double.parseDouble(JOptionPane.showInputDialog(alunos[i] + " nota na prova 2:"));
-		}
-		
-		return notasProva02;
+		return notas;
 	}
 	
 	static double[] calcularMedias(double[] notasProva01, double[] notasProva02, double[] medias) {
@@ -62,8 +53,8 @@ public class Ex03_AlunosMedia {
 		String[] status = new String[5];
 		
 		alunos = cadastrarAlunos(alunos);
-		notasProva01 = registrarNotasProva01(notasProva01, alunos);
-		notasProva02 = registrarNotasProva02(notasProva02, alunos);
+		notasProva01 = registrarNotas(notasProva01, alunos, "PROVA 01");
+		notasProva02 = registrarNotas(notasProva02, alunos, "PROVA 02");
 		medias = calcularMedias(notasProva01, notasProva02, medias);
 		status = definirStatusDosAlunos(medias, status);
 		
