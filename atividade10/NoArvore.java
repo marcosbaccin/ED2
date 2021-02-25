@@ -3,10 +3,10 @@ package ed2.atividade10;
 public class NoArvore {
 
 	int info;
-	NoArvore direita = null;
 	NoArvore esquerda = null;
+	NoArvore direita = null;
 	
-	void impEmOrdem(NoArvore tree) {
+	public void impEmOrdem(NoArvore tree) {
 		
 		if(tree != null) {
 			
@@ -18,7 +18,7 @@ public class NoArvore {
 		}
 	}
 	
-	void impPosOrdem(NoArvore tree) {
+	public void impPosOrdem(NoArvore tree) {
 		
 		if(tree != null) {
 			
@@ -29,7 +29,7 @@ public class NoArvore {
 		}
 	}
 	
-	void impPreOrdem(NoArvore tree) {
+	public void impPreOrdem(NoArvore tree) {
 		
 		if(tree != null) {
 			
@@ -40,7 +40,7 @@ public class NoArvore {
 		}
 	}
 	
-	NoArvore search(NoArvore tree, int valor) {
+	public NoArvore search(NoArvore tree, int valor) {
 		
 		if(tree == null) {
 			return null;
@@ -57,7 +57,7 @@ public class NoArvore {
 		else return(tree);
 	}
 	
-	NoArvore insereRaiz(NoArvore tree, int valor) {
+	public NoArvore insereRaiz(NoArvore tree, int valor) {
 		
 		tree.info = valor;
 		tree.direita = null;
@@ -66,7 +66,7 @@ public class NoArvore {
 		return(tree);
 	}
 	
-	NoArvore insere(NoArvore tree, int valor) {
+	public NoArvore insere(NoArvore tree, int valor) {
 		
 		if(tree == null) {
 			
@@ -87,7 +87,7 @@ public class NoArvore {
 		return(tree);
 	}
 	
-	NoArvore retira(NoArvore tree, int valor) {
+	public NoArvore retira(NoArvore tree, int valor) {
 		
 		if(tree == null) {
 			
@@ -139,7 +139,7 @@ public class NoArvore {
 		return(tree);
 	}
 	
-	int maior(NoArvore tree) {
+	public int maior(NoArvore tree) {
 		
 		if(tree != null && tree.direita == null) {
 			return tree.info;
@@ -148,5 +148,29 @@ public class NoArvore {
 		else {
 			return maior(tree.direita);
 		}
+	}
+	
+	public int getInfo() {
+		return info;
+	}
+
+	public NoArvore getEsquerda() {
+		return esquerda;
+	}
+
+	public NoArvore getDireita() {
+		return direita;
+	}
+
+	public void setInfo(int info) {
+		this.info = info;
+	}
+
+	public void setEsquerda(NoArvore esquerda) {
+		this.esquerda = esquerda;
+	}
+
+	public void setDireita(NoArvore direita) {
+		this.direita = direita;
 	}
 }
