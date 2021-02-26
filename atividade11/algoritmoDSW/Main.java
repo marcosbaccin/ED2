@@ -1,4 +1,4 @@
-package ed2.atividade11.algoritmoDoVetor;
+package ed2.atividade11.algoritmoDSW;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -21,9 +21,11 @@ public class Main {
 	
 	static NoArvore balancearVetor(NoArvore tree) {
 		
-		AlgoritmoDoVetor vetor = new AlgoritmoDoVetor();
+		AlgoritmoDSW dsw = new AlgoritmoDSW();
 		
-		tree = vetor.buildTree(tree);
+		int nodeCount = dsw.getNodeCount(tree);
+		
+		tree = dsw.balanceTree(tree, nodeCount);
 		
 		return tree;
 	}
@@ -76,7 +78,6 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//Criando a árvore com valores aleatórios e em seguida é feito o balanceamento
 		NoArvore tree = new NoArvore();
 		tree = createRandomTree(tree, 5000);
 		tree = balancearVetor(tree);

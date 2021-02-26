@@ -7,7 +7,7 @@ import ed2.atividade10.NoArvore;
 public class AlgoritmoDoVetor {
 	
 	//Esta função atravessa a árvore binária distorcida e armazena seus ponteiros de nós em nós de vetor []
-	public void storeBSTNodes(NoArvore tree, Vector<NoArvore> nos) {
+	private void storeBSTNodes(NoArvore tree, Vector<NoArvore> nos) {
 	
 	//Caso base
 	if(tree == null)
@@ -20,7 +20,7 @@ public class AlgoritmoDoVetor {
 	}
 	
 	//Função recursiva para construir árvore binária
-    public NoArvore buildTreeUtil(Vector<NoArvore> nos, int start, int end) {
+    private NoArvore buildTreeUtil(Vector<NoArvore> nos, int start, int end) {
     	
     	//Caso base
     	if(start > end)
