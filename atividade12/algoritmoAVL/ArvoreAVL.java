@@ -94,21 +94,22 @@ public class ArvoreAVL {
         //3. Obtenha o fator de equilíbrio deste nó ancestral para verificar se este nó se tornou desequilibrado
         int balance = getBalance(node);
  
-        //Se este nó se tornar desequilibrado, então haverá 4 casos Esquerda Caixa
+        //Se este nó se tornar desequilibrado, então haverá 4 casos
+        //Caso Simples Direita
         if(balance > 1 && key < node.left.key)
             return rightRotate(node);
  
-        //Caso Direita Direita
+        //Caso Simples Esquerda
         if(balance < -1 && key > node.right.key)
             return leftRotate(node);
  
-        //Caso Direita Esquerda
+        //Caso Dupla Direita
         if(balance > 1 && key > node.left.key) {
             node.left = leftRotate(node.left);
             return rightRotate(node);
         }
  
-        //Caso Esquerda Direita
+        //Caso Dupla Esquerda
         if(balance < -1 && key < node.right.key) {
             node.right = rightRotate(node.right);
             return leftRotate(node);
@@ -189,21 +190,21 @@ public class ArvoreAVL {
         int balance = getBalance(root);
   
         //Se este nó se tornar desequilibrado, então existem 4 casos
-        //Caso Esquerda Esquerda
+        //Caso Simples Direita
         if(balance > 1 && getBalance(root.left) >= 0)
             return rightRotate(root);
   
-        //Caso Direita Esquerda
+        //Caso Dupla Direita
         if(balance > 1 && getBalance(root.left) < 0) {
             root.left = leftRotate(root.left);
             return rightRotate(root);
         }
   
-        //Caso Direita Direita
+        //Caso Simples Esquerda
         if(balance < -1 && getBalance(root.right) <= 0)
             return leftRotate(root);
   
-        //Caso Esquerda Direita
+        //Caso Dupla Esquerda
         if(balance < -1 && getBalance(root.right) > 0) {
             root.right = rightRotate(root.right);
             return leftRotate(root);

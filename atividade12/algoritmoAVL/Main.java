@@ -68,7 +68,7 @@ public class Main {
 		
 		
 		ArvoreAVL tree = new ArvoreAVL();
-		tree = createRandomTree(tree, 100);
+		tree = createRandomTree(tree, 5000);
 		tree.preOrder(tree.root);
 		System.out.println("");
 		
